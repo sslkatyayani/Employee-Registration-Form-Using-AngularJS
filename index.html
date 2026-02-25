@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="dynamicFormApp">
+<head>
+    <meta charset="UTF-8" />
+    <title>Employee Registration Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="FormController">
+
+    <!-- Hero Banner -->
+    <div class="hero-section">
+        <img src="images/banner.jpg" class="hero-image" />
+        <div class="hero-text">
+            <h1>Employee Registration Form</h1>
+            <p>Professional Dynamic Form System</p>
+        </div>
+    </div>
+
+    <!-- Form Card floating over the banner -->
+    <div class="form-card">
+        <form name="userForm" ng-submit="submitForm()" novalidate>
+
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    class="form-control"
+                    ng-model="formData.fullName"
+                    required
+                />
+                <div class="text-danger" ng-show="userForm.fullName.$touched && userForm.fullName.$invalid">
+                    Full Name is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    ng-model="formData.email"
+                    required
+                />
+                <div class="text-danger" ng-show="userForm.email.$touched && userForm.email.$invalid">
+                    Valid Email is required.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input
+                    type="text"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                    ng-model="formData.phone"
+                    ng-pattern="/^\d{10}$/"
+                />
+                <div class="text-danger" ng-show="userForm.phone.$touched && userForm.phone.$invalid">
+                    Enter valid 10-digit phone number.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select
+                    id="department"
+                    name="department"
+                    class="form-control"
+                    ng-model="formData.department"
+                    required
+                >
+                    <option value="">Select Department</option>
+                    <option>HR</option>
+                    <option>IT</option>
+                    <option>Finance</option>
+                    <option>Marketing</option>
+                </select>
+                <div class="text-danger" ng-show="userForm.department.$touched && userForm.department.$invalid">
+                    Department is required.
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-success" ng-click="downloadExcel()">Download Excel</button>
+        </form>
+    </div>
+</body>
+</html>
