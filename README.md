@@ -27,16 +27,6 @@ This project provides a professional employee registration system with:
 - Excel file download functionality
 - Clean and structured codebase
 
-## Project Structure
-Employee-Registration-Form/
-│
-├── index.html        # Main HTML file
-├── style.css         # Styling for the form and layout
-├── app.js            # AngularJS application logic
-├── images/
-│   └── banner.jpg    # Hero banner image
-└── README.md         # Project documentation
-
 ## How to Run the Project
 
 - Download or clone the repository:
@@ -61,3 +51,4 @@ Employee-Registration-Form/
 
 ## Output
 
+<img width="1354" height="634" alt="Image" src="https://github.com/user-attachments/assets/c650bd52-40f8-48f8-a557-f5447b2cc116" />
